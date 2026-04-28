@@ -46,10 +46,10 @@ def Zoorackzoos_sentence_text_filter(text):
 if __name__ == "__main__":
     tab_amount = "\t"
     print("start of Zoorackzoos_sentence_text_filter program")
-    #user_input = input(tab_amount+"please neter your sentence:")
-    #print()
-    #print(Zoorackzoos_sentence_text_filter(text=user_input,tab_amount=tab_amount))
+    user_input = input(tab_amount+"please neter your sentence:")
     print()
-    print(Zoorackzoos_sentence_text_filter(text="hello from hell"))
+    print(Zoorackzoos_sentence_text_filter(text=user_input))
+    #print()
+    #print(Zoorackzoos_sentence_text_filter(text="hello from hell"))
     print()
     print("end of Zoorackzoos_sentence_text_filter program")
