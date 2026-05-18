@@ -32,9 +32,13 @@ def Zoorackzoos_sentence_text_filter(text):
 
     substring_start = 0
     for i in range(len(text)):
-        if text[i] == " ":
+        if (text[i] == " " or
+                text[i] == "." or
+                text[i] == "!" or
+                text[i] == "," or
+                text[i] == "?"):
             word = text[substring_start:i]
-            return_string += word[::-1] + " "
+            return_string += word[::-1] + text[i]
             substring_start = i+1
 
         if i == len(text)-1:
@@ -46,7 +50,7 @@ def Zoorackzoos_sentence_text_filter(text):
 if __name__ == "__main__":
     tab_amount = "\t"
     print("start of Zoorackzoos_sentence_text_filter program")
-    user_input = input(tab_amount+"please neter your sentence:")
+    user_input = input(tab_amount+"please neter your sentence:\n")
     print()
     print(Zoorackzoos_sentence_text_filter(text=user_input))
     #print()
