@@ -36,7 +36,8 @@ def Zoorackzoos_sentence_text_filter(text):
                 text[i] == "." or
                 text[i] == "!" or
                 text[i] == "," or
-                text[i] == "?"):
+                text[i] == "?" or
+                text[i] == "\n"):
             word = text[substring_start:i]
             return_string += word[::-1] + text[i]
             substring_start = i+1
@@ -50,10 +51,17 @@ def Zoorackzoos_sentence_text_filter(text):
 if __name__ == "__main__":
     tab_amount = "\t"
     print("start of Zoorackzoos_sentence_text_filter program")
-    user_input = input(tab_amount+"please neter your sentence:\n")
-    print()
+    print(tab_amount+"please enter your sentence. put \"\\0\" to end it:")
+    user_input = ""
+
+    end_string_bool = False
+    while not end_string_bool:
+        new_temp_line = input()
+        if new_temp_line == "\\0":
+            end_string_bool = True
+        else:
+            user_input += "\n"+new_temp_line
+
     print(Zoorackzoos_sentence_text_filter(text=user_input))
-    #print()
-    #print(Zoorackzoos_sentence_text_filter(text="hello from hell"))
     print()
     print("end of Zoorackzoos_sentence_text_filter program")
